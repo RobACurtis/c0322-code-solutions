@@ -6,15 +6,22 @@
 
 .row {
   display: flex;
+}
+
+.column-full {
   width: 100%;
 }
 
-.column {
-  width: 100%;
+.column-third {
+  width: calc(100% / 3);
+}
+
+.column-one-fourth {
+  width: 25%;
 }
 
 .column-two-thirds {
-  width: 200%;
+  width: 66%;
 }
 
 img {
