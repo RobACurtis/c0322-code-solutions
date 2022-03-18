@@ -1,0 +1,50 @@
+body {
+  background-color: #1996da;
+  color: white;
+  font-family: Lato, sans-serif;
+}
+
+p {
+  font-size: 12px;
+  color: rgb(236 236 236);
+  margin: 13px;
+}
+
+img {
+  width: 50%;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  margin-top: 50px;
+}
+
+.column-one-third {
+  flex-direction: column;
+  flex-basis: calc(100% / 3);
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.circle {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.text-align {
+  text-align: center;
+}
