@@ -24,12 +24,20 @@ img {
 }
 
 .column-full {
-  margin-top: 50px;
+  flex-basis: 100%;
 }
 
 .column-one-third {
-  flex-direction: column;
   flex-basis: calc(100% / 3);
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 15px;
