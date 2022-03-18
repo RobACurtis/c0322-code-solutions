@@ -4,22 +4,40 @@ body {
 }
 
 h1 {
-  letter-spacing: 5px;
-  font-size: 35px;
+  letter-spacing: 3px;
+  font-size: 40px;
 }
 
 p {
   font-size: 12px;
   font-family: Karla, sans-serif;
+  font-weight: 500;
+  line-height: 1.7;
+  color: rgb(131 131 131);
+  margin: 0%;
+}
+
+h5 {
+  margin-bottom: 10px;
+}
+
+img {
+  width: 100px;
+}
+
+button {
+  color: #de837f;
+  border: 1px solid #de837f;
+  background-color: white;
+  padding: 8px 35px;
+  font-family: Karla, sans-serif;
   font-weight: 700;
-  line-height: 1.6;
-  color: rgb(161 161 161);
+  font-size: 12px;
 }
 
 .container {
   max-width: 800px;
   margin: auto;
-  border: 1px solid black;
 }
 
 .row {
@@ -27,15 +45,36 @@ p {
   flex-wrap: wrap;
 }
 
-.text-align {
-  text-align: center;
-}
-
 .column-centered {
   flex-basis: calc(100% / 1.5);
   margin: auto;
 }
 
+.column-full {
+  flex-basis: 100%;
+  margin: auto;
+}
+
 .column-one-half {
   flex-basis: 50%;
+}
+
+.column-sixty-percent {
+  width: 60%;
+}
+
+.text-align-img {
+  text-align: right;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.margin {
+  margin-top: 25px;
+}
+
+.center {
+  justify-content: center;
 }
