@@ -24,14 +24,18 @@ p {
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .text-align {
   text-align: center;
 }
 
-.column {
-  flex-direction: column;
-  max-width: 550px;
+.column-centered {
+  flex-basis: calc(100% / 1.5);
   margin: auto;
+}
+
+.column-one-half {
+  flex-basis: 50%;
 }
