@@ -1,0 +1,37 @@
+body {
+  font-family: Karla, sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  letter-spacing: 5px;
+  font-size: 35px;
+}
+
+p {
+  font-size: 12px;
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  line-height: 1.6;
+  color: rgb(161 161 161);
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.row {
+  display: flex;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.column {
+  flex-direction: column;
+  max-width: 550px;
+  margin: auto;
+}
