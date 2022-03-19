@@ -1,0 +1,96 @@
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.column-full {
+  flex: 100%;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+ul {
+  margin: 50px 0;
+  line-height: 35px;
+  text-align: center;
+  font-family: Avenir, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(133 133 133);
+}
+
+.background {
+  background-color: rgb(248 247 247);
+}
+
+/* Ready to learn more? */
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.text-align-left {
+  text-align: left;
+  margin-left: 70px;
+}
+
+.text-align-right {
+  text-align: right;
+  margin: 30px 40px;
+}
+
+.button {
+  background-color: #294464;
+  color: rgb(219 218 218);
+  font-family: Avenir, sans-serif;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 30px;
+}
+
+.font {
+  font-family: "Tiempos Headline", sans-serif;
+  color: rgb(117 117 117);
+  font-size: 23px;
+  margin-top: 30px;
+  margin-bottom: 0%;
+}
+
+.p {
+  font-family: Avenir, sans-serif;
+  font-size: 12px;
+  color: rgb(117 117 117);
+  line-height: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* footer */
+
+.column-twenty-percent {
+  flex-basis: 20%;
+}
+
+.margin-footer {
+  margin-left: 45px;
+}
+
+.footer {
+  background-color: rgb(250 250 250);
+  font-family: Avenir, sans-serif;
+  font-size: 13px;
+  color: rgb(92 92 92);
+  padding: 20px;
+}
