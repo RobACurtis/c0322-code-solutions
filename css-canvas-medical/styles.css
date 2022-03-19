@@ -1,5 +1,19 @@
+h2 {
+  font-family: "Tiempos Headline", sans-serif;
+  color: white;
+  margin-bottom: 10px;
+}
+
+li {
+  list-style-type: none;
+  line-height: 35px;
+  font-weight: 500;
+  font-family: Avenir, sans-serif;
+  font-size: 13px;
+}
+
 .container {
-  max-width: 850px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -11,33 +25,118 @@
   flex-wrap: wrap;
 }
 
+.column-half {
+  flex-basis: 50%;
+}
+
+.column-one-third {
+  flex-basis: 33%;
+}
+
+.column-twenty-percent {
+  flex-basis: 20%;
+}
+
+.column-sixty-percent {
+  flex-basis: 50%;
+}
+
+.column-forty-percent {
+  flex-basis: 40%;
+}
+
+.button {
+  background-color: #294464;
+  color: rgb(219 218 218);
+  border: none;
+  border-radius: 4px;
+}
+
+.button-large {
+  padding: 10px 40px;
+  margin-top: 10px;
+}
+
+.button-menu {
+  padding: 10px 15px;
+  font-size: 12px;
+  font-family: Avenir, sans-serif;
+}
+
+.avenir-font {
+  font-family: Avenir, sans-serif;
+  font-size: 12px;
+}
+
+.logo {
+  width: 117px;
+}
+
+.logo-relative {
+  position: relative;
+  left: 50px;
+  top: 5px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  color: #a3a3a3;
+  margin-bottom: 6px;
+  margin-right: 38px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgb(236 236 236);
+}
+
+.margin-menu {
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* Hero Image */
+.hero-image {
+  background-image: linear-gradient(rgb(158 157 157 / 50%), rgb(158 157 157 / 50%)), url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 40px;
+}
+
+.hero-text {
+  text-align: left;
+  color: white;
+  margin: 30px 50px 50px;
+}
+
+.hero-font {
+  font-size: 12px;
+  line-height: 18px;
+  font-family: Avenir, sans-serif;
+  margin-bottom: 15px;
+}
+
+/* Clinicians prefer canvas  */
 .column-full {
   flex: 100%;
 }
 
 .text-align-center {
   text-align: center;
+  margin-top: 20px;
 }
 
-ul {
-  margin: 50px 0;
-  line-height: 35px;
-  text-align: center;
-  font-family: Avenir, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
+.locations {
+  margin: 20px 0 50px;
   color: rgb(133 133 133);
+  padding-bottom: 10px;
 }
 
-.background {
+.background-clinicians {
   background-color: rgb(248 247 247);
 }
 
 /* Ready to learn more? */
-
-.column-half {
-  flex-basis: 50%;
-}
 
 .text-align-left {
   text-align: left;
@@ -49,16 +148,7 @@ ul {
   margin: 30px 40px;
 }
 
-.button {
-  background-color: #294464;
-  color: rgb(219 218 218);
-  font-family: Avenir, sans-serif;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 30px;
-}
-
-.font {
+.title-font {
   font-family: "Tiempos Headline", sans-serif;
   color: rgb(117 117 117);
   font-size: 23px;
@@ -69,19 +159,44 @@ ul {
 .p {
   font-family: Avenir, sans-serif;
   font-size: 12px;
-  color: rgb(117 117 117);
-  line-height: 20px;
+  padding-bottom: 10px;
+  line-height: 18px;
+  color: rgb(122 122 122);
 }
 
-li {
-  list-style-type: none;
+/* Canvas footer  */
+
+.canvas-background {
+  background-color: #525350;
+}
+
+.padding-footer {
+  padding: 40px 0 50px 60px;
+}
+
+.address {
+  color: #dddbdb;
+  line-height: 20px;
+  margin-top: 30px;
+}
+
+.rel-position {
+  position: relative;
+  left: 60px;
+  bottom: 32px;
+}
+
+.footer-li {
+  margin: 0;
+  color: rgb(218 218 218);
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
 }
 
 /* footer */
-
-.column-twenty-percent {
-  flex-basis: 20%;
-}
 
 .margin-footer {
   margin-left: 45px;
@@ -89,8 +204,6 @@ li {
 
 .footer {
   background-color: rgb(250 250 250);
-  font-family: Avenir, sans-serif;
-  font-size: 13px;
   color: rgb(92 92 92);
   padding: 20px;
 }
