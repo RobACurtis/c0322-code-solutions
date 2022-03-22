@@ -1,0 +1,66 @@
+.background-color {
+  background-color: #f7f8fa;
+  font-family: Barlow, sans-serif;
+}
+
+.container {
+  width: 850px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.img-phone {
+  width: 20%;
+}
+
+.img-icon {
+  width: 50px;
+}
+
+.text-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.font {
+  font-size: 8px;
+}
+
+.margin {
+  margin: 0 20px;
+}
+
+.margin-p {
+  margin: 0 30px;
+}
+
+.rel {
+  position: relative;
+  bottom: 5px;
+}
+
+.rel-h {
+  position: relative;
+  bottom: 20px;
+}
+
+.rel-p {
+  position: relative;
+  bottom: 30px;
+}
