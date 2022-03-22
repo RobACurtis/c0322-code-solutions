@@ -7,17 +7,20 @@ var orderHistory = [
     delivered: true,
     dateDelivered: 'August 8, 2020',
     deliveredTo: null,
-    image: true,
-    itemName: 'JavaScript for impatient programmers',
-    book: true,
-    author: 'Rauschmayer, Dr. Axel',
-    returnWindowClosed: true,
-    returnWindowDate: 'September 7, 2020',
-    itemPrice: 31.55,
     productReviewed: false,
     productreview: 'Write a product review',
     support: false,
-    productSupport: null
+    productSupport: null,
+    items: [
+      {
+        image: 'images/url.png',
+        itemName: 'JavaScript for impatient programmers',
+        author: 'Rauschmayer, Dr. Axel',
+        returnWindowClosed: true,
+        returnWindowDate: 'September 7, 2020',
+        itemPrice: 31.55
+      }
+    ]
   },
   {
     orderPlaced: 'July 19, 2020',
@@ -27,17 +30,20 @@ var orderHistory = [
     delivered: true,
     dateDelivered: 'July 20, 2020',
     deliveredTo: 'resident',
-    image: true,
-    itemName: 'The Timeless Way of Building',
-    book: true,
-    author: 'Alexander, Christopher',
-    returnWindowClosed: true,
-    returnWindowDate: 'Aug 19, 2020',
-    itemPrice: 41.33,
     productReviewed: false,
     productreview: 'Write a product review',
     support: false,
-    productSupport: null
+    productSupport: null,
+    items: [
+      {
+        image: 'images/url.png',
+        itemName: 'The Timeless Way of Building',
+        author: 'Alexander, Christopher',
+        returnWindowClosed: true,
+        returnWindowDate: 'Aug 19, 2020',
+        itemPrice: 41.33
+      }
+    ]
   },
   {
     orderPlaced: 'July 4, 2020',
@@ -47,17 +53,20 @@ var orderHistory = [
     delivered: true,
     dateDelivered: 'July 7, 2020',
     deliveredTo: 'resident',
-    image: true,
-    itemName: 'GameCube Controller Adapter. Super Smash Bros Switch GameCube Adapter for WII U, PC. Support Turbo and Vibration Features. No Driver and No Lag-Gamecube Adapter',
-    book: false,
-    author: null,
-    returnWindowClosed: true,
-    returnWindowDate: 'Aug 5, 2020',
-    itemPrice: 15.98,
     productReviewed: false,
     productreview: 'Write a product review',
     support: false,
-    productSupport: null
+    productSupport: null,
+    items: [
+      {
+        image: 'images/url.png',
+        itemName: 'GameCube Controller Adapter. Super Smash Bros Switch GameCube Adapter for WII U, PC. Support Turbo and Vibration Features. No Driver and No Lag-Gamecube Adapter',
+        author: null,
+        returnWindowClosed: true,
+        returnWindowDate: 'Aug 5, 2020',
+        itemPrice: 15.98
+      }
+    ]
   },
   {
     orderPlaced: 'July 3, 2020',
@@ -73,18 +82,16 @@ var orderHistory = [
     productSupport: 'Get Product Support',
     items: [
       {
-        image: true,
+        image: 'images/url.png',
         itemName: 'GameCube Controller Adapter. Super Smash Bros. Edition (Nintendo Switch)',
-        book: false,
         author: null,
         returnWindowClosed: true,
         returnWindowDate: 'Aug 4 2020',
         itemPrice: 94.95
       },
       {
-        image: true,
+        image: 'images/url.png',
         itemName: 'The Art of Sql',
-        book: true,
         author: 'Faroult, Stephane',
         returnWindowClosed: true,
         returnWindowDate: 'Aug 4, 2020',
@@ -93,5 +100,3 @@ var orderHistory = [
     ]
   }
 ];
-
-console.log('Order History', orderHistory);
