@@ -16,6 +16,14 @@ img {
   display: flex;
 }
 
+.nowrap {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .column-full {
   flex-basis: 100%;
 }
@@ -25,9 +33,7 @@ img {
 }
 
 .text-center {
-  display: flex;
   text-align: center;
-  justify-content: center;
 }
 
 .font-title {
@@ -49,10 +55,6 @@ img {
   text-decoration: line-through;
 }
 
-.nowrap {
-  display: flex;
-}
-
 .rel-position-title {
   position: relative;
   bottom: 15px;
@@ -71,4 +73,5 @@ img {
 .fit {
   object-fit: cover;
   height: 225px;
+}
 }
