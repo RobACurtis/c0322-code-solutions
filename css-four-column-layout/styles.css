@@ -1,0 +1,59 @@
+.background-color {
+  background-color: #f7f8fa;
+  font-family: Barlow, sans-serif;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.column-quarter {
+  width: 25%;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-phone {
+  width: 100%;
+}
+
+.img-icon {
+  width: 50px;
+}
+
+.font {
+  font-size: 8px;
+}
+
+.margin {
+  margin: 0 100px;
+}
+
+.rel-h {
+  position: relative;
+  bottom: 15px;
+}
+
+.rel-p {
+  position: relative;
+  bottom: 25px;
+}
