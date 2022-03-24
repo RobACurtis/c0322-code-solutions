@@ -43,7 +43,7 @@ function logEachCharacter(string) {
 function doubleAll(numbers) {
   var doubled = [];
   for (var i = 0; i < numbers.length; i++) {
-    doubled.push(numbers[i] * numbers[i]);
+    doubled.push(numbers[i] + numbers[i]);
   }
   return doubled;
 }
