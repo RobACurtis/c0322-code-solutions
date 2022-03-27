@@ -1,9 +1,3 @@
-h2 {
-  font-family: "Tiempos Headline", sans-serif;
-  color: white;
-  margin-bottom: 10px;
-}
-
 li {
   list-style-type: none;
   line-height: 35px;
@@ -12,40 +6,183 @@ li {
   font-size: 13px;
 }
 
-/* Hero Image */
-.hero-image {
-  background-image: linear-gradient(rgb(107 107 107 / 50%), rgb(107 107 107 / 50%)), url("images/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  margin: 40px;
+.fixed {
+  position: sticky;
+  top: 0;
 }
 
-.hero-text {
-  text-align: left;
-  color: rgb(240 239 239);
-  margin: 30px 50px 50px;
+.container {
+  max-width: 800px;
+  margin: auto;
 }
 
-.hero-font {
-  font-size: 11px;
-  line-height: 18px;
+.row {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.column-full {
+  flex: 100%;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.column-one-third {
+  flex-basis: 33%;
+}
+
+.column-twenty-percent {
+  flex-basis: 20%;
+}
+
+.column-forty-percent {
+  flex-basis: 40%;
+}
+
+/* menu */
+.index {
+  z-index: 1;
+}
+
+.background-color {
+  background-color: white;
+}
+
+.button {
+  background-color: #294464;
+  color: rgb(219 218 218);
+  border: none;
+  border-radius: 4px;
+}
+
+.button-large {
+  padding: 10px 40px;
+  margin-top: 10px;
+}
+
+.button-menu {
+  padding: 10px 15px;
+  font-size: 12px;
   font-family: Avenir, sans-serif;
-  margin-bottom: 15px;
 }
 
-/* Clinicians prefer canvas  */
-.text-align-center {
-  text-align: center;
+.avenir-font {
+  font-family: Avenir, sans-serif;
+  font-size: 12px;
+}
+
+.logo {
+  width: 117px;
+}
+
+.logo-relative {
+  position: relative;
+  left: 50px;
+  top: 30px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  color: #a3a3a3;
+  margin-bottom: 6px;
+  margin-right: 38px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgb(236 236 236);
+}
+
+.margin-menu {
   margin-top: 20px;
-}
-
-.locations {
-  margin: 20px 0 50px;
-  color: rgb(133 133 133);
   padding-bottom: 10px;
 }
 
-.background-clinicians {
-  background-color: rgb(248 247 247);
-  border-bottom: 1px solid rgb(240 238 238);
+.select {
+  color: #294464;
+}
+
+.link {
+  text-decoration: none;
+  color: #a3a3a3;
+}
+
+.link:hover {
+  color: #294464;
+}
+
+/* Ready to learn more? */
+
+.text-align-left {
+  text-align: left;
+  margin-left: 70px;
+}
+
+.text-align-right {
+  text-align: right;
+  margin: 30px 40px;
+}
+
+.title-font {
+  font-family: "Tiempos Headline", sans-serif;
+  color: rgb(117 117 117);
+  font-size: 23px;
+  margin-top: 30px;
+  margin-bottom: 0%;
+}
+
+.p {
+  font-size: 12px;
+  padding-bottom: 10px;
+  line-height: 18px;
+  color: rgb(122 122 122);
+}
+
+/* Canvas footer  */
+
+.canvas-background {
+  background-color: #525350;
+}
+
+.padding-footer {
+  padding: 40px 0 50px 60px;
+}
+
+.address-font {
+  line-height: 20px;
+  margin-top: 30px;
+}
+
+.rel-position {
+  position: relative;
+  left: 60px;
+  bottom: 32px;
+}
+
+.color {
+  color: rgb(218 218 218);
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer */
+
+.margin-footer-p {
+  margin: 12px 30px 0 40px;
+}
+
+.footer {
+  display: flex;
+  background-color: rgb(250 250 250);
+  color: rgb(92 92 92);
+  padding: 20px;
+  margin-bottom: 40px;
 }

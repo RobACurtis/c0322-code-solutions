@@ -1,162 +1,67 @@
-li {
-  list-style-type: none;
-  line-height: 35px;
-  font-weight: 500;
-  font-family: Avenir, sans-serif;
-  font-size: 13px;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-}
-
-.row {
-  display: flex;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.column-full {
-  flex: 100%;
-}
-
-.column-half {
-  flex-basis: 50%;
-}
-
-.column-one-third {
-  flex-basis: 33%;
-}
-
-.column-twenty-percent {
-  flex-basis: 20%;
-}
-
-.column-forty-percent {
-  flex-basis: 40%;
-}
-
-/* menu */
-.button {
-  background-color: #294464;
-  color: rgb(219 218 218);
-  border: none;
-  border-radius: 4px;
-}
-
-.button-large {
-  padding: 10px 40px;
-  margin-top: 10px;
-}
-
-.button-menu {
-  padding: 10px 15px;
-  font-size: 12px;
-  font-family: Avenir, sans-serif;
-}
-
-.avenir-font {
-  font-family: Avenir, sans-serif;
-  font-size: 12px;
-}
-
-.logo {
-  width: 117px;
-}
-
-.logo-relative {
-  position: relative;
-  left: 50px;
-  top: 5px;
-}
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  color: #a3a3a3;
-  margin-bottom: 6px;
-  margin-right: 38px;
-}
-
-.border-bottom {
-  border-bottom: 1px solid rgb(236 236 236);
-}
-
-.margin-menu {
-  margin-top: 20px;
-  padding-bottom: 10px;
-}
-
-/* Ready to learn more? */
-
-.text-align-left {
-  text-align: left;
-  margin-left: 70px;
-}
-
-.text-align-right {
-  text-align: right;
-  margin: 30px 40px;
-}
-
-.title-font {
+h2 {
   font-family: "Tiempos Headline", sans-serif;
-  color: rgb(117 117 117);
-  font-size: 23px;
-  margin-top: 30px;
-  margin-bottom: 0%;
+  margin-bottom: 10px;
 }
 
-.p {
-  font-size: 12px;
-  padding-bottom: 10px;
-  line-height: 18px;
-  color: rgb(122 122 122);
-}
-
-/* Canvas footer  */
-
-.canvas-background {
-  background-color: #525350;
-}
-
-.padding-footer {
-  padding: 40px 0 50px 60px;
-}
-
-.address-font {
-  line-height: 20px;
-  margin-top: 30px;
-}
-
-.rel-position {
+.hero-image {
+  background-image: linear-gradient(rgb(107 107 107 / 50%), rgb(107 107 107 / 50%)), url("images/product/product-header.jpg");
+  width: 90%;
+  height: 360px;
+  background-position: center;
+  background-size: cover;
   position: relative;
-  left: 60px;
-  bottom: 32px;
+  left: 40px;
+  top: 70px;
+  margin-bottom: 100px;
 }
 
-.color {
-  color: rgb(218 218 218);
+.absolute {
+  position: absolute;
+  width: 400px;
+  top: 90px;
+  left: 50px;
 }
 
-.center {
-  justify-content: center;
-  align-items: center;
+.hero-text {
+  text-align: left;
+  color: rgb(240 239 239);
 }
 
-/* footer */
-
-.margin-footer-p {
-  margin: 12px 30px 0 40px;
+.hero-font {
+  font-size: 11px;
+  line-height: 18px;
+  font-family: Avenir, sans-serif;
+  margin-bottom: 15px;
 }
 
-.footer {
-  display: flex;
-  background-color: rgb(250 250 250);
-  color: rgb(92 92 92);
-  padding: 20px;
-  margin-bottom: 40px;
+/* care at your command  */
+
+img.width {
+  width: 90%;
+  margin: 30px;
+}
+
+.background {
+  background-color: #fbfbfb;
+}
+
+.position-p {
+  position: relative;
+  top: 50px;
+  left: 30px;
+  margin-left: 20px;
+}
+
+.color-product {
+  color: rgb(104 104 104);
+}
+
+.font {
+  font-family: Avenir, sans-serif;
+  font-size: 12px;
+}
+
+.italics {
+  font-family: serif;
+  font-style: italic;
 }
