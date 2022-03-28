@@ -1,0 +1,35 @@
+h2 {
+  font-family: "Tiempos Headline", sans-serif;
+  font-weight: 300;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgb(102 102 102 / 35.6%), rgb(102 102 102 / 37%)), url("images/implementation/implementation-header.jpg");
+  width: 90%;
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  left: 40px;
+  top: 70px;
+  margin-bottom: 100px;
+}
+
+.absolute {
+  position: absolute;
+  width: 400px;
+  top: 40px;
+  left: 50px;
+}
+
+.hero-text {
+  text-align: left;
+  color: rgb(240 239 239);
+}
+
+.hero-font {
+  font-size: 11.5px;
+  line-height: 18px;
+  font-family: Avenir, sans-serif;
+  margin-bottom: 15px;
+}
