@@ -36,9 +36,19 @@ h2 {
 
 /* care at your command  */
 
-img.width {
+img.width-1 {
   width: 90%;
   margin: 30px;
+}
+
+img.width-2 {
+  width: 90%;
+  margin: 0 0 50px 60px;
+}
+
+img.width-3 {
+  width: 90%;
+  margin: 80px 30px 80px 40px;
 }
 
 .background {
@@ -50,6 +60,14 @@ img.width {
   top: 50px;
   left: 30px;
   margin-left: 20px;
+}
+
+.position-p-3 {
+  position: relative;
+  bottom: 20px;
+  left: 40px;
+  margin-left: 20px;
+  padding: 50px 0;
 }
 
 .color-product {
