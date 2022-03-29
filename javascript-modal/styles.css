@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+}
+
+.background {
+  background-image: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 80%));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.blue-button {
+  color: white;
+  font-size: 25px;
+  background-color: blue;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px grey;
+  position: absolute;
+  z-index: -1;
+}
+
+.pink-button {
+  width: 85px;
+  height: 35px;
+  color: white;
+  font-size: 18px;
+  background-color: rgb(252 96 96);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px grey;
+}
+
+.pink-button:hover {
+  cursor: pointer;
+}
+
+.blue-button:hover {
+  cursor: pointer;
+}
+
+.container {
+  height: 175px;
+  width: 400px;
+  background-color: white;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.margin {
+  margin-top: 20px;
+}
+
+.hide {
+  visibility: hidden;
+}
