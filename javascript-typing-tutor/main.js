@@ -1,16 +1,19 @@
 var $span = document.querySelectorAll('span');
-var $div2 = document.querySelector('.play-again');
-var $divP = document.querySelector('.paragraph');
+
+var $divPlayAgain = document.querySelector('.play-again');
+var $playAgain = document.createElement('h2');
+
+var $divScore = document.querySelector('.paragraph');
+var $score = document.createElement('p');
+
 var $divButton = document.querySelector('.button');
-var $finish = document.createElement('h2');
 var $button = document.createElement('button');
-var $p = document.createElement('p');
 
 var arr = [];
 var accuracy;
 var letterIndex = 0;
 
-function key(event) {
+function typingGame(event) {
   var key = event.key;
   arr.push(key);
   if ($span[letterIndex].textContent === key && letterIndex !== $span.length - 1) {
@@ -31,19 +34,20 @@ function key(event) {
 }
 
 function playAgain(event) {
-  $finish.setAttribute('class', 'green');
-  $finish.textContent = 'Play Again?';
+  $playAgain.setAttribute('class', 'green');
+  $playAgain.textContent = 'Play Again?';
   $button.textContent = 'fine';
-  $div2.appendChild($finish);
+  $divPlayAgain.appendChild($playAgain);
   $divButton.appendChild($button);
   if (accuracy >= 70) {
-    $p.textContent = 'You Scored ' + accuracy + '% !!!';
-    $p.setAttribute('class', 'score-green');
+    $score.textContent = 'You Scored ' + accuracy + '% !!!';
+    $score.setAttribute('class', 'score-green');
   } else {
-    $p.textContent = 'You Scored ' + accuracy + '%.... You Suck!';
-    $p.setAttribute('class', 'score-red');
+    $score.textContent = 'You Scored ' + accuracy + '%.... FAIL!';
+    $score.setAttribute('class', 'score-red');
+    $button.setAttribute('class', 'red-button');
   }
-  $divP.appendChild($p);
+  $divScore.appendChild($score);
 }
 
 function reset(event) {
@@ -53,10 +57,10 @@ function reset(event) {
   }
   letterIndex = 0;
   arr = [];
-  $div2.removeChild($finish);
+  $divPlayAgain.removeChild($playAgain);
   $divButton.removeChild($button);
-  $divP.removeChild($p);
+  $divScore.removeChild($score);
 }
 
 $button.addEventListener('click', reset);
-document.addEventListener('keydown', key);
+document.addEventListener('keydown', typingGame);
