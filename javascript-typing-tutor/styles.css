@@ -29,13 +29,13 @@ button {
   transition: 1s;
 }
 
-.red-button {
-  background-color: red;
-}
-
 button:hover {
   cursor: pointer;
   transform: rotate(10deg);
+}
+
+.red-button {
+  background-color: red;
 }
 
 .red {

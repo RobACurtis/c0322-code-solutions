@@ -13,6 +13,9 @@ var arr = [];
 var accuracy;
 var letterIndex = 0;
 
+$button.addEventListener('click', reset);
+document.addEventListener('keydown', typingGame);
+
 function typingGame(event) {
   var key = event.key;
   arr.push(key);
@@ -34,33 +37,33 @@ function typingGame(event) {
 }
 
 function playAgain(event) {
-  $playAgain.setAttribute('class', 'green');
-  $playAgain.textContent = 'Play Again?';
-  $button.textContent = 'fine';
-  $divPlayAgain.appendChild($playAgain);
-  $divButton.appendChild($button);
-  if (accuracy >= 70) {
+  if (accuracy >= 90) {
     $score.textContent = 'You Scored ' + accuracy + '% !!!';
     $score.setAttribute('class', 'score-green');
+    $playAgain.textContent = 'Play Again?';
+    $playAgain.setAttribute('class', 'green');
+    $button.setAttribute('class', 'green-button');
   } else {
     $score.textContent = 'You Scored ' + accuracy + '%.... FAIL!';
     $score.setAttribute('class', 'score-red');
+    $playAgain.textContent = 'Try Again';
+    $playAgain.setAttribute('class', 'red');
     $button.setAttribute('class', 'red-button');
   }
+  $button.textContent = 'fine';
+  $divPlayAgain.appendChild($playAgain);
+  $divButton.appendChild($button);
   $divScore.appendChild($score);
 }
 
 function reset(event) {
   for (var i = 0; i < $span.length; i++) {
     $span[i].className = '';
-    $span[0].className = 'underline';
   }
+  $span[0].className = 'underline';
   letterIndex = 0;
   arr = [];
   $divPlayAgain.removeChild($playAgain);
   $divButton.removeChild($button);
   $divScore.removeChild($score);
 }
-
-$button.addEventListener('click', reset);
-document.addEventListener('keydown', typingGame);
