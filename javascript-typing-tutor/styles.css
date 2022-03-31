@@ -9,7 +9,7 @@ body {
 }
 
 span {
-  margin: 0 -3px;
+  white-space: break-spaces;
 }
 
 .red {
@@ -22,7 +22,7 @@ span {
 
 .container {
   height: 150px;
-  width: 700px;
+  width: 800px;
   position: relative;
   top: 200px;
 }
@@ -41,4 +41,8 @@ span {
 .underline-red {
   border-bottom: 3px solid red;
   padding-bottom: 5px;
+}
+
+.animation {
+  transform: rotateX(180deg) 1s;
 }
