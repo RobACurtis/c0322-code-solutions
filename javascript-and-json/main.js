@@ -22,7 +22,7 @@ JSON.stringify(books);
 console.log('stringify: ', JSON.stringify(books));
 console.log('stringify typeof: ', typeof JSON.stringify(books));
 
-var string = '[{ "student number id": "045786", "string name": "Matthew Balentino" }]';
+var string = '[{ "id": "045786", "name": "Matthew Balentino" }]';
 
 console.log('json-string: ', string);
 console.log('typeof', typeof string);
