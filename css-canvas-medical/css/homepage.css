@@ -15,7 +15,7 @@ li {
 
 /* Hero Image */
 .hero-image {
-  background-image: linear-gradient(rgb(107 107 107 / 50%), rgb(107 107 107 / 50%)), url("images/hero.jpg");
+  background-image: linear-gradient(rgb(107 107 107 / 50%), rgb(107 107 107 / 50%)), url("../images/hero.jpg");
   background-size: cover;
   background-position: center;
   margin: 40px;
