@@ -129,6 +129,10 @@ li {
   margin: 30px 40px;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .title-font {
   font-family: "Tiempos Headline", sans-serif;
   color: rgb(117 117 117);

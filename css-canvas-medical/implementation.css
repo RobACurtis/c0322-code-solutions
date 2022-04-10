@@ -33,3 +33,34 @@ h2 {
   font-family: Avenir, sans-serif;
   margin-bottom: 15px;
 }
+
+li.numbered {
+  margin: 50px 140px;
+  line-height: 18px;
+}
+
+span.number {
+  color: rgb(117 117 117);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: Avenir, sans-serif;
+  font-weight: 400;
+}
+
+h2.list {
+  margin: 60px 0 25px;
+}
+
+.color-text {
+  color: rgb(156 156 156);
+  font-weight: 400px;
+  font-size: 12px;
+}
+
+.border-top {
+  border-top: 1px solid rgb(231 231 231);
+}
