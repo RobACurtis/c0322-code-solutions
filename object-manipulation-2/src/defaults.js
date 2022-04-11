@@ -8,15 +8,16 @@
 //   Object.assign(target, source);
 // }
 // function defaults(target, source) {
+//   var obj = target;
 //   for (var x in source) {
-//     if (target === {}) {
-//       target = source;
-//     }
 //     for (var y in target) {
-//       if (x !== y) {
-//         target[source[y]];
+//       if (target[y] === undefined) {
+//         obj = source[x];
+//       }
+//       if (source[x] !== target[y]) {
+//         obj = source[y];
 //       }
 //     }
+//     console.log(obj);
 //   }
-//   console.log(target);
 // }
