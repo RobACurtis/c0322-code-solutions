@@ -9,16 +9,17 @@
 // return the target object from the function.
 
 function defaults(target, source) {
+  var foundKeys = {};
   for (var key in source) {
     for (var keyT in target) {
       if (key === keyT) {
-        delete source[key];
-        continue;
+        foundKeys[keyT] = target[keyT];
       }
     }
-  }
-  for (key in source) {
     target[key] = source[key];
+  }
+  for (key in foundKeys) {
+    target[key] = foundKeys[key];
   }
   return target;
 }
