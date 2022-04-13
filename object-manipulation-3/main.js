@@ -1,4 +1,29 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
+
+// create an array with four object literals for each player
+// create an array with 56 objects for every card in a deck of  cards
+// create a function to shuffle the cards
+// pair the shuffled cards into pairs
+// create a function to deal the cards
+// call the shuffle cards function
+// loop through array of the objects of players
+// assign each player a pair of cards
+// log the players to the console to see their  cards
+// return the cards from the function.
+// deal the cards to each player
+// create a function to play the game and decide the winner
+// create a variable for the final number
+// create a variable with an empty string for the winner
+// create a variable to call the dealCards function and store the return
+// loop through the returned players array
+// assign the values of the pair to a variable to count the total score
+// check if its an ace, king, queen or jack and assign the value accordingly
+// add the two cards together and get the total points
+// check if the total points is greater than the previous sumTotal
+// if it is, replace the previous highest score with the newest
+// concactenate a string to declair the new winner
+// return the final winner and log it to the console.
+
 var cardPlayers = [
   {
     name: 'Player One',
@@ -33,26 +58,25 @@ var cards = [
   { suite: 'Spades', rank: 10 }, { suite: 'Spades', rank: 'Jack' }, { suite: 'Spades', rank: 'Queen' }, { suite: 'Spades', rank: 'King' }
 ];
 
-function cardNum() {
+function shuffleCards() {
   var shuffledDeck = _.shuffle(cards);
   var cardsPaired = _.chunk(shuffledDeck, [2]);
   return cardsPaired;
 }
 
 function dealCards() {
-  var pairs = cardNum();
-  cardPlayers[0].hand = pairs[0];
-  cardPlayers[1].hand = pairs[1];
-  cardPlayers[2].hand = pairs[2];
-  cardPlayers[3].hand = pairs[3];
+  var pairs = shuffleCards();
+  for (var i = 0; i < cardPlayers.length; i++) {
+    cardPlayers[i].hand = pairs[i];
+  }
+  console.log(cardPlayers);
   return cardPlayers;
 }
 
-function winner() {
+function playGame() {
   var sumTotal = 0;
   var winner = '';
   var players = dealCards();
-  console.log(players);
   for (var i = 0; i < players.length; i++) {
     var cardValues = [players[i].hand[0].rank, players[i].hand[1].rank];
     for (var score = 0; score < cardValues.length; score++) {
@@ -63,11 +87,12 @@ function winner() {
       }
     }
     var total = (cardValues[0] + cardValues[1]);
-    // debugger;
     if (total > sumTotal) {
       sumTotal = total;
-      winner = players[i].name + ' WINS!!! with a score of ' + sumTotal;
+      winner = players[i].name + ' with a score of ' + sumTotal + ' WINS!!!';
     }
   }
-  console.log(winner);
+  return winner;
 }
+
+playGame();
