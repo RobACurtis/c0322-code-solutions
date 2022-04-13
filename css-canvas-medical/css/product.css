@@ -1,0 +1,90 @@
+h2 {
+  font-family: "Tiempos Headline", sans-serif;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgb(107 107 107 / 50%), rgb(107 107 107 / 50%)), url("../images/product/product-header.jpg");
+  width: 90%;
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  left: 40px;
+  top: 70px;
+  margin-bottom: 100px;
+}
+
+.absolute {
+  position: absolute;
+  width: 400px;
+  top: 90px;
+  left: 50px;
+}
+
+.hero-text {
+  text-align: left;
+  color: rgb(240 239 239);
+}
+
+.hero-font {
+  font-size: 11px;
+  line-height: 18px;
+  font-family: Avenir, sans-serif;
+  margin-bottom: 15px;
+}
+
+/* care at your command  */
+
+img.width-1 {
+  width: 90%;
+  margin: 30px;
+}
+
+img.width-2 {
+  width: 90%;
+  margin: 0 0 50px 60px;
+}
+
+img.width-3 {
+  width: 90%;
+  margin: 80px 30px 80px 40px;
+}
+
+.background {
+  background-color: #fbfbfb;
+}
+
+.position-p {
+  position: relative;
+  top: 50px;
+  left: 30px;
+  margin-left: 20px;
+}
+
+.position-p-3 {
+  position: relative;
+  bottom: 20px;
+  left: 40px;
+  margin-left: 20px;
+  padding: 50px 0;
+}
+
+.color-product {
+  color: rgb(104 104 104);
+}
+
+.font {
+  font-family: Avenir, sans-serif;
+  font-size: 12px;
+}
+
+.font-size {
+  font-size: 22px;
+}
+
+.italics {
+  font-family: serif;
+  font-style: italic;
+}
