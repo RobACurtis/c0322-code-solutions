@@ -1,53 +1,73 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 var cardPlayers = [
   {
-    name: '',
+    name: 'Player One',
     hand: []
   },
   {
-    name: '',
+    name: 'Player Two',
     hand: []
   },
   {
-    name: '',
+    name: 'Player Three',
     hand: []
   },
   {
-    name: '',
+    name: 'Player Four',
     hand: []
   }
 ];
 
 var cards = [
-  'Ace of clubs', '2 of clubs', '3 of clubs', '4 of clubs', '5 of clubs', '6 of clubs', '7 of clubs',
-  '8 of clubs', '9 of clubs', '10 of clubs', 'Jack of clubs', 'Queen of clubs', 'King of clubs',
-  'Ace of Diamonds', '2 of Diamonds', '3 of Diamonds', '4 of Diamonds', '5 of Diamonds', '6 of Diamonds',
-  '7 of Diamonds', '8 of Diamonds', '9 of Diamonds', '10 of Diamonds', 'Jack of Diamonds', 'Queen of Diamonds',
-  'King of Diamonds', 'Ace of Hearts', '2 of Hearts', '3 of Hearts', '4 of Hearts', '5 of Hearts', '6 of Hearts',
-  '7 of Hearts', '8 of Hearts', '9 of Hearts', '10 of Hearts', 'Jack of Hearts', 'Queen of Hearts', 'King of Hearts',
-  'Ace of Spades', '2 of Spades', '3 of Spades', '4 of Spades', '5 of Spades', '6 of Spades', '7 of Spades',
-  '8 of Spades', '9 of Spades', '10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades'
+  { suite: 'clubs', rank: 'Ace' }, { suite: 'clubs', rank: 1 }, { suite: 'clubs', rank: 2 }, { suite: 'clubs', rank: 3 }, { suite: 'clubs', rank: 4 },
+  { suite: 'clubs', rank: 5 }, { suite: 'clubs', rank: 6 }, { suite: 'clubs', rank: 7 }, { suite: 'clubs', rank: 8 }, { suite: 'clubs', rank: 9 },
+  { suite: 'clubs', rank: 10 }, { suite: 'clubs', rank: 'Jack' }, { suite: 'clubs', rank: 'Queen' }, { suite: 'clubs', rank: 'King' },
+  { suite: 'Hearts', rank: 'Ace' }, { suite: 'Hearts', rank: 1 }, { suite: 'Hearts', rank: 2 }, { suite: 'Hearts', rank: 3 }, { suite: 'Hearts', rank: 4 },
+  { suite: 'Hearts', rank: 5 }, { suite: 'Hearts', rank: 6 }, { suite: 'Hearts', rank: 7 }, { suite: 'Hearts', rank: 8 }, { suite: 'Hearts', rank: 9 },
+  { suite: 'Hearts', rank: 10 }, { suite: 'Hearts', rank: 'Jack' }, { suite: 'Hearts', rank: 'Queen' }, { suite: 'Hearts', rank: 'King' },
+  { suite: 'Diamonds', rank: 'Ace' }, { suite: 'Diamonds', rank: 1 }, { suite: 'Diamonds', rank: 2 }, { suite: 'Diamonds', rank: 3 }, { suite: 'Diamonds', rank: 4 },
+  { suite: 'Diamonds', rank: 5 }, { suite: 'Diamonds', rank: 6 }, { suite: 'Diamonds', rank: 7 }, { suite: 'Diamonds', rank: 8 }, { suite: 'Diamonds', rank: 9 },
+  { suite: 'Diamonds', rank: 10 }, { suite: 'Diamonds', rank: 'Jack' }, { suite: 'Diamonds', rank: 'Queen' }, { suite: 'Diamonds', rank: 'King' },
+  { suite: 'Spades', rank: 'Ace' }, { suite: 'Spades', rank: 1 }, { suite: 'Spades', rank: 2 }, { suite: 'Spades', rank: 3 }, { suite: 'Spades', rank: 4 },
+  { suite: 'Spades', rank: 5 }, { suite: 'Spades', rank: 6 }, { suite: 'Spades', rank: 7 }, { suite: 'Spades', rank: 8 }, { suite: 'Spades', rank: 9 },
+  { suite: 'Spades', rank: 10 }, { suite: 'Spades', rank: 'Jack' }, { suite: 'Spades', rank: 'Queen' }, { suite: 'Spades', rank: 'King' }
 ];
 
-// create a function to pick to random cards
-// delete the cards from the array and store them in a variable.
 function cardNum() {
-  var num = Math.floor(Math.random() * 56);
-  return num;
+  var shuffledDeck = _.shuffle(cards);
+  var cardsPaired = _.chunk(shuffledDeck, [2]);
+  return cardsPaired;
 }
-var deletedCards = [];
 
 function dealCards() {
+  var pairs = cardNum();
+  cardPlayers[0].hand = pairs[0];
+  cardPlayers[1].hand = pairs[1];
+  cardPlayers[2].hand = pairs[2];
+  cardPlayers[3].hand = pairs[3];
+  return cardPlayers;
+}
 
-  var cardNum1 = cardNum();
-  console.log(cardNum1);
-  var card1 = cards[cardNum1];
-
-  var del = cards.splice(cardNum1, 1);
-  deletedCards.push(del[0]);
-
-  console.log(card1);
-  console.log('deleted', deletedCards);
-  console.log(cards);
-
+function winner() {
+  var sumTotal = 0;
+  var winner = '';
+  var players = dealCards();
+  console.log(players);
+  for (var i = 0; i < players.length; i++) {
+    var cardValues = [players[i].hand[0].rank, players[i].hand[1].rank];
+    for (var score = 0; score < cardValues.length; score++) {
+      if (cardValues[score] === 'Ace') {
+        cardValues[score] = 11;
+      } else if (cardValues[score] === 'Jack' || cardValues[score] === 'Queen' || cardValues[score] === 'King') {
+        cardValues[score] = 10;
+      }
+    }
+    var total = (cardValues[0] + cardValues[1]);
+    // debugger;
+    if (total > sumTotal) {
+      sumTotal = total;
+      winner = players[i].name + ' WINS!!! with a score of ' + sumTotal;
+    }
+  }
+  console.log(winner);
 }
