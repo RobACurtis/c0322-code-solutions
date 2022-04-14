@@ -1,17 +1,23 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
 // create an array with four object literals for each player
-// create an array with 56 objects for every card in a deck of  cards
-// create a function to shuffle the cards
-// pair the shuffled cards into pairs
+// create an array with the four suites of cards
+// create an array with the card ranks
+// create an empty array for the deck of cards
+// create a function to make the card deck
+// loop through the original array of players and reset their hands to be empty
+// reset the deck to be empty.
+// loop through the suites and ranks and pair them together
+// shuffle the deck of cards
+// assign the shuffled deck of cards to a variable
+// return the variable from the function
 // create a function to deal the cards
 // call the shuffle cards function
 // loop through array of the objects of players
 // assign each player a pair of cards
-// log the players to the console to see their  cards
-// return the cards from the function.
-// deal the cards to each player
+// return the cardplayers from the function.
 // create a function to play the game and decide the winner
+// log the players to the console to see their  cards
 // create a variable for the final number
 // create a variable with an empty string for the winner
 // create a variable to call the dealCards function and store the return
@@ -48,8 +54,11 @@ var cardNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'King', 'Queen'];
 var deck = [];
 
 function shuffleCards() {
+  for (var i = 0; i < cardPlayers.length; i++) {
+    cardPlayers[i].hand = [];
+  }
   deck = [];
-  for (var i = 0; i < suite.length; i++) {
+  for (i = 0; i < suite.length; i++) {
     for (var cardI = 0; cardI < cardNum.length; cardI++) {
       var obj = {
         suite: suite[i],
@@ -61,16 +70,13 @@ function shuffleCards() {
   }
 
   var shuffle = _.shuffle(deck);
-  console.log(shuffle);
   return shuffle;
 }
 
 function dealCards() {
   var shuffled = shuffleCards();
+
   for (var i = 0; i < cardPlayers.length; i++) {
-    cardPlayers[i].hand = [];
-  }
-  for (i = 0; i < cardPlayers.length; i++) {
     for (var pair = i; pair < shuffled.length; pair += 4) {
       cardPlayers[i].hand.push(shuffled[pair]);
       if (cardPlayers[i].hand.length > 1) {
@@ -79,15 +85,14 @@ function dealCards() {
     }
   }
 
-  console.log(cardPlayers);
   return cardPlayers;
 }
 
 function playGame() {
+  console.log(cardPlayers);
   var sumTotal = 0;
   var winner = '';
   var players = dealCards();
-  console.log(cardPlayers);
   for (var i = 0; i < players.length; i++) {
     var cardValues = [players[i].hand[0].rank, players[i].hand[1].rank];
     for (var score = 0; score < cardValues.length; score++) {
@@ -105,5 +110,4 @@ function playGame() {
   }
   return winner;
 }
-
 playGame();
