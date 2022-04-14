@@ -43,34 +43,35 @@ var cardPlayers = [
   }
 ];
 
-var cards = [
-  { suite: 'clubs', rank: 'Ace' }, { suite: 'clubs', rank: 1 }, { suite: 'clubs', rank: 2 }, { suite: 'clubs', rank: 3 }, { suite: 'clubs', rank: 4 },
-  { suite: 'clubs', rank: 5 }, { suite: 'clubs', rank: 6 }, { suite: 'clubs', rank: 7 }, { suite: 'clubs', rank: 8 }, { suite: 'clubs', rank: 9 },
-  { suite: 'clubs', rank: 10 }, { suite: 'clubs', rank: 'Jack' }, { suite: 'clubs', rank: 'Queen' }, { suite: 'clubs', rank: 'King' },
-  { suite: 'Hearts', rank: 'Ace' }, { suite: 'Hearts', rank: 1 }, { suite: 'Hearts', rank: 2 }, { suite: 'Hearts', rank: 3 }, { suite: 'Hearts', rank: 4 },
-  { suite: 'Hearts', rank: 5 }, { suite: 'Hearts', rank: 6 }, { suite: 'Hearts', rank: 7 }, { suite: 'Hearts', rank: 8 }, { suite: 'Hearts', rank: 9 },
-  { suite: 'Hearts', rank: 10 }, { suite: 'Hearts', rank: 'Jack' }, { suite: 'Hearts', rank: 'Queen' }, { suite: 'Hearts', rank: 'King' },
-  { suite: 'Diamonds', rank: 'Ace' }, { suite: 'Diamonds', rank: 1 }, { suite: 'Diamonds', rank: 2 }, { suite: 'Diamonds', rank: 3 }, { suite: 'Diamonds', rank: 4 },
-  { suite: 'Diamonds', rank: 5 }, { suite: 'Diamonds', rank: 6 }, { suite: 'Diamonds', rank: 7 }, { suite: 'Diamonds', rank: 8 }, { suite: 'Diamonds', rank: 9 },
-  { suite: 'Diamonds', rank: 10 }, { suite: 'Diamonds', rank: 'Jack' }, { suite: 'Diamonds', rank: 'Queen' }, { suite: 'Diamonds', rank: 'King' },
-  { suite: 'Spades', rank: 'Ace' }, { suite: 'Spades', rank: 1 }, { suite: 'Spades', rank: 2 }, { suite: 'Spades', rank: 3 }, { suite: 'Spades', rank: 4 },
-  { suite: 'Spades', rank: 5 }, { suite: 'Spades', rank: 6 }, { suite: 'Spades', rank: 7 }, { suite: 'Spades', rank: 8 }, { suite: 'Spades', rank: 9 },
-  { suite: 'Spades', rank: 10 }, { suite: 'Spades', rank: 'Jack' }, { suite: 'Spades', rank: 'Queen' }, { suite: 'Spades', rank: 'King' }
-];
+var suite = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+var cardNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'King', 'Queen'];
+var deck = [];
 
 function shuffleCards() {
-  var shuffledDeck = _.shuffle(cards);
-  var cardsPaired = _.chunk(shuffledDeck, [2]);
-  return cardsPaired;
+  var suites = _.shuffle(suite);
+  var cards = _.shuffle(cardNum);
+  for (var i = 0; i < suite.length; i++) {
+    for (var cardI = 0; cardI < cardNum.length; cardI++) {
+      var obj = {
+        suite: suites[i],
+        card: cards[cardI]
+      };
+      deck.push(obj);
+    }
+
+  }
+  return deck;
 }
 
 function dealCards() {
-  var pairs = shuffleCards();
+  var cards = shuffleCards();
   for (var i = 0; i < cardPlayers.length; i++) {
-    cardPlayers[i].hand = pairs[i];
+    for (var pair = 0; pair < 2; pair++) { // <---- starts everytime at 0 how do I make it start at 2?
+      cardPlayers[i].hand.push(cards[pair]);
+    }
   }
   console.log(cardPlayers);
-  return cardPlayers;
+  // return cardPlayers;
 }
 
 function playGame() {
@@ -95,4 +96,19 @@ function playGame() {
   return winner;
 }
 
-playGame();
+// playGame();
+
+// var cards = [
+//   { suite: 'clubs', rank: 'Ace' }, { suite: 'clubs', rank: 1 }, { suite: 'clubs', rank: 2 }, { suite: 'clubs', rank: 3 }, { suite: 'clubs', rank: 4 },
+//   { suite: 'clubs', rank: 5 }, { suite: 'clubs', rank: 6 }, { suite: 'clubs', rank: 7 }, { suite: 'clubs', rank: 8 }, { suite: 'clubs', rank: 9 },
+//   { suite: 'clubs', rank: 10 }, { suite: 'clubs', rank: 'Jack' }, { suite: 'clubs', rank: 'Queen' }, { suite: 'clubs', rank: 'King' },
+//   { suite: 'Hearts', rank: 'Ace' }, { suite: 'Hearts', rank: 1 }, { suite: 'Hearts', rank: 2 }, { suite: 'Hearts', rank: 3 }, { suite: 'Hearts', rank: 4 },
+//   { suite: 'Hearts', rank: 5 }, { suite: 'Hearts', rank: 6 }, { suite: 'Hearts', rank: 7 }, { suite: 'Hearts', rank: 8 }, { suite: 'Hearts', rank: 9 },
+//   { suite: 'Hearts', rank: 10 }, { suite: 'Hearts', rank: 'Jack' }, { suite: 'Hearts', rank: 'Queen' }, { suite: 'Hearts', rank: 'King' },
+//   { suite: 'Diamonds', rank: 'Ace' }, { suite: 'Diamonds', rank: 1 }, { suite: 'Diamonds', rank: 2 }, { suite: 'Diamonds', rank: 3 }, { suite: 'Diamonds', rank: 4 },
+//   { suite: 'Diamonds', rank: 5 }, { suite: 'Diamonds', rank: 6 }, { suite: 'Diamonds', rank: 7 }, { suite: 'Diamonds', rank: 8 }, { suite: 'Diamonds', rank: 9 },
+//   { suite: 'Diamonds', rank: 10 }, { suite: 'Diamonds', rank: 'Jack' }, { suite: 'Diamonds', rank: 'Queen' }, { suite: 'Diamonds', rank: 'King' },
+//   { suite: 'Spades', rank: 'Ace' }, { suite: 'Spades', rank: 1 }, { suite: 'Spades', rank: 2 }, { suite: 'Spades', rank: 3 }, { suite: 'Spades', rank: 4 },
+//   { suite: 'Spades', rank: 5 }, { suite: 'Spades', rank: 6 }, { suite: 'Spades', rank: 7 }, { suite: 'Spades', rank: 8 }, { suite: 'Spades', rank: 9 },
+//   { suite: 'Spades', rank: 10 }, { suite: 'Spades', rank: 'Jack' }, { suite: 'Spades', rank: 'Queen' }, { suite: 'Spades', rank: 'King' }
+// ];
