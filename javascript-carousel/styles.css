@@ -1,0 +1,47 @@
+img {
+  height: 300px;
+  width: 400px;
+  margin: 35px 40px;
+  object-fit: cover;
+}
+
+.container {
+  width: 600px;
+  height: 100vh;
+  margin: auto;
+}
+
+.margin-top {
+  margin-top: 100px;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.arrow {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.fa-circle {
+  font-size: 15px;
+  margin: 4px;
+  position: relative;
+  bottom: 25px;
+  cursor: pointer;
+}
