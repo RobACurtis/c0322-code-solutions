@@ -1,4 +1,5 @@
 const data = require('./data');
+const fs = require('fs');
 const express = require('express');
 const app = express();
 
@@ -18,6 +19,27 @@ app.get('/api/notes/:id', (req, res) => {
     res.status(404).send({ error: `can not find note with id ${id}` });
   } else {
     res.send(data.notes[id]);
+  }
+});
+
+app.use(express.json());
+
+app.post('/api/notes', (req, res) => {
+  if (!req.body.content) {
+    res.status(404).send({ error: 'content is a required field' });
+  } else if (req.body.content) {
+    data.notes[data.nextId] = req.body;
+    data.notes[data.nextId].id = data.nextId;
+    data.nextId++;
+    const stringData = JSON.stringify(data, null, 2);
+    fs.writeFile('./data.json', stringData, 'utf8', err => {
+      if (err) {
+        console.error(err);
+        res.status(500).send({ error: 'an unexpected error occured.' });
+      } else {
+        res.send(data.notes[data.nextId - 1]);
+      }
+    });
   }
 });
 
