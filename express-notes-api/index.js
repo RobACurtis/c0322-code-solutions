@@ -26,7 +26,7 @@ app.use(express.json());
 
 app.post('/api/notes', (req, res) => {
   if (!req.body.content) {
-    res.status(404).send({ error: 'content is a required field' });
+    res.status(400).send({ error: 'content is a required field' });
   } else if (req.body.content) {
     data.notes[data.nextId] = req.body;
     data.notes[data.nextId].id = data.nextId;
@@ -37,7 +37,7 @@ app.post('/api/notes', (req, res) => {
         console.error(err);
         res.status(500).send({ error: 'an unexpected error occured.' });
       } else {
-        res.send(data.notes[data.nextId - 1]);
+        res.status(201).send(data.notes[data.nextId - 1]);
       }
     });
   }
