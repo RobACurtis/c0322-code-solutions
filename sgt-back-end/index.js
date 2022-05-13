@@ -28,8 +28,12 @@ app.use(express.json());
 
 app.post('/api/grades', (req, res) => {
   const score = Number(req.body.score);
-  if (!req.body.name || !req.body.course || !req.body.score) {
-    res.status(400).send({ error: 'fill out all fields' });
+  if (!req.body.name) {
+    res.status(400).send({ error: 'fill out name' });
+  } else if (!req.body.course) {
+    res.status(400).send({ error: 'fill out course' });
+  } else if (!req.body.score) {
+    res.status(400).send({ error: 'fill out score' });
   } else if (score <= 0 || !Number.isInteger(score)) {
     res.status(400).send({ error: 'score must be a positive integer' });
   } else {
@@ -54,8 +58,12 @@ app.post('/api/grades', (req, res) => {
 app.put('/api/grades/:gradeId', (req, res) => {
   const score = Number(req.body.score);
   const gradeId = Number(req.params.gradeId);
-  if (!req.body.name || !req.body.course || !req.body.score) {
-    res.status(400).send({ error: 'fill out all fields' });
+  if (!req.body.name) {
+    res.status(400).send({ error: 'fill out all name' });
+  } else if (!req.body.course) {
+    res.status(400).send({ error: 'fill out course' });
+  } else if (!req.body.score) {
+    res.status(400).send({ error: 'fill out score' });
   } else if (score <= 0 || !Number.isInteger(score)) {
     res.status(400).send({ error: 'score must be a positive integer' });
   } else {
@@ -73,7 +81,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
       .then(result => {
         const grades = result.rows;
         if (grades[0] === undefined) {
-          res.status(404).json({ error: 'Cannot find grades' });
+          res.status(404).json({ error: `Cannot find gradeId ${gradeId}` });
         } else {
           res.status(200).json(grades[0]);
         }
@@ -100,7 +108,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
       .then(result => {
         const grades = result.rows;
         if (grades[0] === undefined) {
-          res.status(404).json({ error: 'Cannot find gradeId' });
+          res.status(404).json({ error: `Cannot find gradeId ${gradeId}` });
         } else {
           res.sendStatus(204);
         }
