@@ -26,4 +26,4 @@ const balance = account.reduce((previousValue, currentValue) => {
     return previousValue - currentValue.amount;
   }
 }, 0);
-const composite = traits.reduce((previousValue, currentValue) => Object.assign(previousValue, currentValue));
+const composite = traits.reduce((previousValue, currentValue) => Object.assign(previousValue, currentValue), {});
