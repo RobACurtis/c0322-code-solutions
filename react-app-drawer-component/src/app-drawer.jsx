@@ -21,6 +21,7 @@ export default class AppDrawer extends React.Component {
 
   render() {
     let hideDrawer = 'hidden';
+
     let hideIcon = '';
     if (this.state.menuVisible) {
       hideIcon = 'hidden';
@@ -34,7 +35,7 @@ export default class AppDrawer extends React.Component {
         </div>
         <div id="drawer" className={hideDrawer}>
           <div className="background-image"></div>
-          <div className='menu'>
+          <div className= "menu">
             <ul>
               <h3>Menu</h3>
               <li>About</li>
