@@ -20,22 +20,22 @@ export default class AppDrawer extends React.Component {
   }
 
   render() {
-    let hideDrawer = 'hidden';
-
+    let modal = 'opacity';
+    let menuOn = '';
     let hideIcon = '';
     if (this.state.menuVisible) {
-      hideIcon = 'hidden';
-      hideDrawer = '';
+      hideIcon = 'opacity';
+      modal = '';
+      menuOn = 'is-on';
     }
     return (
       <div onClick={this.showMenu}>
-        <img src="../images/React-icon.svg.png" alt="" />
-        <div className={`icon ${hideIcon}`}>
+        <div className={hideIcon}>
           <i id="menu-icon" className="fa-solid fa-bars" onClick={this.showMenu}></i>
         </div>
-        <div id="drawer" className={hideDrawer}>
-          <div className="background-image"></div>
-          <div className= "menu">
+        <div id="drawer" className={modal}>
+          <div className="menu-shade"></div>
+          <div className= {`menu ${menuOn}`}>
             <ul>
               <h3>Menu</h3>
               <li>About</li>
