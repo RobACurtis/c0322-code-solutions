@@ -6,7 +6,7 @@ const list = [
   {
     id: 1,
     topic: 'HTML',
-    content: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    content: ` HTML is neat and Lorem, ipsum dolor sit amet consectetur adipisicing elit.
   Voluptates vitae provident placeat laboriosam distinctio,
   unde optio nisi adipisci at doloribus. Quas voluptatem exercitationem
   ratione temporibus? Dolorem quam velit reprehenderit asperiores?`
@@ -14,7 +14,7 @@ const list = [
   {
     id: 2,
     topic: 'Cascading Style Sheets',
-    content: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    content: ` CSS is cool and Lorem, ipsum dolor sit amet consectetur adipisicing elit.
   Voluptates vitae provident placeat laboriosam distinctio,
   unde optio nisi adipisci at doloribus. Quas voluptatem exercitationem
   ratione temporibus? Dolorem quam velit reprehenderit asperiores?`
@@ -22,7 +22,7 @@ const list = [
   {
     id: 3,
     topic: 'JavaScript',
-    content: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    content: ` JavaScript is the best and Lorem, ipsum dolor sit amet consectetur adipisicing elit.
   Voluptates vitae provident placeat laboriosam distinctio,
   unde optio nisi adipisci at doloribus. Quas voluptatem exercitationem
   ratione temporibus? Dolorem quam velit reprehenderit asperiores?`
