@@ -1,17 +1,13 @@
 img {
   height: 300px;
-  width: 400px;
+  width: 500px;
   margin: 35px 40px;
   object-fit: cover;
 }
 
 .container {
   width: 600px;
-  height: 100vh;
   margin: auto;
-}
-
-.margin-top {
   margin-top: 100px;
 }
 

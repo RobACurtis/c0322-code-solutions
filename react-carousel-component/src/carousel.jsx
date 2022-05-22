@@ -19,7 +19,7 @@ export default class Carousel extends React.Component {
   }
 
   nextImg(e) {
-    const id = Number(this.state.imageId);
+    const id = this.state.imageId;
     if (id > this.props.list.length - 2) {
       this.setState({ imageId: 0 });
     } else {
@@ -30,7 +30,7 @@ export default class Carousel extends React.Component {
   }
 
   prevImg(e) {
-    const id = Number(this.state.imageId);
+    const id = this.state.imageId;
     if (id === 0) {
       this.setState({ imageId: this.props.list.length - 1 });
     } else {
@@ -40,8 +40,8 @@ export default class Carousel extends React.Component {
     this.componentDidMount();
   }
 
-  selectImageByDot(event) {
-    const targetID = event.target.id.split('-');
+  selectImageByDot(e) {
+    const targetID = e.target.id.split('-');
     const idNum = Number(targetID[1]);
     this.setState({ imageId: idNum - 1 });
     clearInterval(this.timerID);
@@ -49,37 +49,40 @@ export default class Carousel extends React.Component {
   }
 
   render() {
-    let hidden = 'hidden';
-    let circle = 'fas';
+    let hidden;
     const images = this.props.list;
-    let id = 0;
+    let imageId = 0;
     const imgList = images.map(img => {
-      if (id > images.length - 1) {
-        id = 0;
+      if (imageId > images.length - 1) {
+        imageId = 0;
       }
-      if (id === this.state.imageId) {
+      if (imageId === this.state.imageId) {
         hidden = '';
       } else {
         hidden = 'hidden';
       }
-      id++;
+      imageId++;
       return (
-        <img key={id} src={img} alt="surfing" className={hidden}/>
+        <img key={imageId} src={img} alt="surfing" className={hidden}/>
       );
     });
-    id = 0;
+
+    let circleClass;
+    let circleId = 0;
     const circleButtons = images.map(img => {
-      if (id === this.state.imageId) {
-        circle = 'fas';
+      if (circleId === this.state.imageId) {
+        circleClass = 'fas';
       } else {
-        circle = 'far';
+        circleClass = 'far';
       }
-      id++;
+      circleId++;
       return (
-        <i id={`dot-${id}`} key={`circle-${id}`} className={`circle ${circle} fa-circle`} onClick={this.selectImageByDot}></i>
+        <i id={`dot-${circleId}`} key={`circle-${circleId}`} className={`circle ${circleClass} fa-circle`} onClick={this.selectImageByDot}></i>
       );
     });
-    return (<div className='container margin-top'>
+
+    return (
+    <div className='container'>
       <div className="row">
         <div className="column-full center">
           <i onClick={this.prevImg} className="l arrow fas fa-angle-left"></i>
@@ -94,6 +97,7 @@ export default class Carousel extends React.Component {
           {circleButtons}
       </div>
     </div>
-  </div>);
+  </div>
+    );
   }
 }
