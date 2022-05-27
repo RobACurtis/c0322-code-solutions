@@ -1,0 +1,146 @@
+What happens when in the intial get request?
+
+  --index.jsx is run.
+  --it imports react, reactDOM and the App component.
+  --It querys the div with the id root and creates and root container for the React elements.
+  --It then runs the render method, where it creates the App component.
+
+app.jsx
+
+  -- in app.jsx, we import a number of components to use in the class.
+  -- we first begin by creating a class named App which extends from React.component.
+  -- a constructor method is given to it passing in props.
+  -- in the constructor, we set the state.
+  -- the state is an object literal with three properties.
+      -- user: this value is set to null as a default. It waits to be set when a user logs in.
+      -- isAuthorizing: is set to true as a default. It waits for a user to log in to set to false.
+      -- route: which calles on parseRoute function with the argument window.location.hash, this function is for checking the route
+                specifically, if it starts with a # then replace it with an empty string.
+              -- otherwise it
+                then destructures elements 1 and 2 from the array which is split between the '?'
+                the new const variables are path and queryString.
+                it then calls URLSearchParams with the new operator to search for queryString and is assigned to the const variable params.
+                then it returns the path and params from the function and is returned to the state proprety route.
+  -- after the state is set, handleSignIn and handleSignOut methods are assigned and binded to this.
+  -- the page is then rendered after the state is set.
+  -- it checks if the state property isAuthorizing is truthy. if it is (which it is) then it returns null.
+  -- after returning null. the componentDidMount method is run, it adds an event listener to the window object waiting for hash changes.
+  -- it then checks local storage for a token. If there is, then it will decode the token and assign it to the const variable user,
+
+  but if there is not
+  --   then it will assign the const variable user, null.
+  -- it will then reset the state with the new value of user and will assign false to isAuthorizing since the code is done checking if the user has an account or login token.
+  -- at this point render will run again and not return null since isAuthorizing is falsey
+  -- right away, user and route properties are destructured from the state property of this object and assigned to their named variables
+  -- and handleSignIn and handleSignOut are also destructred from this object and assigned to there named variables
+  -- after this we assign an object literal with the property and values of user, route, handleSignIn, and handleSignOut to the const variable contextValue.
+    -- this contextValue is going to be the value for our React.Context. This is so we can treat these values as global values and not need to pass them down as
+         props to each of the following React Components.
+  -- we then create a ReactElement calling on the AppContext component which is creating a React Context and assigning the value of contextValue to itself.
+  -- this context will share the value of contextValue to each of the components it creates after each component imports it and sets its context.
+
+  Navbar
+  -- there is a new ReactElement named navbar. this calls on the Navbar class.
+  -- the navbar immediatley begins rendering the navbar component.
+  -- the navbar class first destructures the user and handlesignout classes from the context of this object.
+  -- it then creates a navbar with react elements.
+  -- one thing to note is that it checks if user is not null. If it is, it assigns the handleSignOut method to the onClick event.
+    -- the handleSignOut method will remove the token from local storage and then set the state, which will call the render method again
+    -- the render method will check if user is null, which it will be and it will start the process all over again.
+  -- if it is null, then it gives the option to sign up. This navbar is exported as default and returned to the app.jsx render method.
+  -- the navbar contextType is the value of AppContext which we imported from the app-context component.
+
+  back to app.jsx
+
+  -- after the navbar component is returned, the pageContainer component is called. The page container function has an argument of the object containing
+       the variable children and returns a container div with some basic styles applied to it and to gives it children
+  -- as a child of the pageContainer, the renderPage method of this object is called.
+
+  renderPage method
+
+  -- within the renderPage method the path property of the route property of the state property of this object is being destructred and assigned to path
+  -- then, we check if the path is an empty string or if path is signin or sign up, or if its not either of those.
+  -- if it is an empty string, the react element Home is returned from the function.
+
+    home
+      -- in the home class, we first check for the state of the user. If the user property has a value of null, then it returns the react component Redirect
+      -- if it is not null it returns a div with a child of react component type iframe.
+      -- in this case it is null, it returns Redirect.
+
+    Redirect
+      --it checks the to property of the props object. is it an empty string? then assign it # for the home page.
+      -- otherwise assign the hash property of the url object to have the value of 'sign-in'
+      -- it then cals the replace method of the location property of the window object with the argument of the variable url.
+      -- then returns null;
+
+back to renderPage method from home component.
+
+   -- if a user has yet to be loggin in or authorized, the path will be either sign in or sign up.
+   -- the render page method after checking if the path is an empty string will check if the path is 'sign-in' or 'sign-up'
+   -- it will then call the React component Auth.
+
+      Auth
+      -- in the Auth class, the render method is being called.
+      -- it firsts deconstructs the properties user, route and handleSignIn from the context property of this object,
+         and assigns them to  variables with their own names.
+      -- it checks if user is logged in, then it will call the Redirect component and assign the prop an empty string
+      -- if the user is not logged in, it checks if the path is 'sign-in' or sign up
+      -- depending on which path it is, the welcomeMessage variable is assigned a certain string value
+      -- it then creats a react element type div with children and the welcome message as a prop to one of the children.
+      -- it also calls on the AuthForm component passing the props of route.path and handleSignIn.
+
+          AuthForm
+            -- the AppContext component is imported and after the class body is defined, the context type of the authpage is assigned the value of AppContext.
+            -- in the class, there is a constructor method
+            -- the state is set with two properties of username and password with the values of an empty string
+            -- the two methods handleChange and handleSubmit are bound to this.
+            -- it then calls the render method
+            -- action is destructred from the props property of this object which was assigned in Auth
+            -- handleChange and handleSubmit are destructred from this object as well.
+            -- there are a series of booleans to check whether to assign values according to log in or sign up
+            -- it then returns a form from the class.
+            -- in the form, the handleSubmit method is assigned to the form event onSubmit
+                handleSubmit
+                    -- the handlesubmit method will destructure the action property of the props
+                    -- it will assign an object literal containing properties of method, headers and body for a post request for application/json with a stringify method containing an argument of this.state
+                    -- it will then call the fetch function to send a post request to the api route passing the JS varaiable action as its path and the req variable as a header.
+                    index.js
+                    -- it will call expressStatic with the publicPath variable as an argument and pass the return as middleware
+                    -- the request is parsed from a json string into an object,
+                       if it sends a post request with the path sign-up
+                          -- it will destructure username and password from req.body
+                          -- the hash method of the argon2 object is called with the password
+                          -- a then method of the previous return is called with an arrow function as an argument.
+                          -- it passes the hashedPassword as an arguent
+                          -- it will then query the data base and insert the username and hashedPassword into the data base.
+                          -- it will then send the json response of the username and password back to the client.
+                        if the request is to the path sign-in
+                          -- the database is queried for the username and hashedPassword where the username is equal to the username submitted.
+                          -- the user property of the result.rows is destructred and assigned to user
+                          -- if not null, userID and hashedPassword are destructured from the user object and assigned to themself.
+                          -- the verify method of the argon2 object is called with the arguments of hashedPassword and password.
+                          -- the then method of the return of the previous verify method is called to check if the previous methods return is truthy or falsey
+                          -- if falsy, it will return a 401 error
+                          -- if truthy then an object literal with the property and values of userId and username are assigned to const payload
+                          -- then the sign method of jwt object is called with two arguments, the variable payload and the token secret of the env propertt of the process object
+                          -- the response is then sent as a json string as an object with the property and values token and user with the value of payload.
+                    -- when the server sends the response, a promise obejct is returned
+                    -- then method will then parse the json response.
+                    -- the then method of the previous method will then be called with an argument of an anonomous arrow function
+                        which will check if the return of the previous method was signup or sign in and assign the hash property of the location property of the window object accordingly.
+                        if it is not signup then it will check if the user property of the res object and token property of the res object are truthy. Then call the onSignIn method of the props property of this object with the argument of result this prop has the value of the method handleSignIn
+            --the react element form has children, worthy of note is the inputs have an event listener of onChange which will call handleChange method
+            -- in the handleChange method, name and value are being destructured from event.target and assigned to const variables with their own names
+            -- the state will then be set with the property containing the value of name(username), and a value containing value which is whatever the user inputs.
+            -- the form is then returned from the authForm component back into the auth component.
+      --Auth is then returned from the class and the return is given to app.jsx
+
+  back to app.jsx
+  -- if the path is not an empty string or signup or sign-in,
+  -- the NotFound component is returned from the function.
+
+        NotFound
+        -- this react component is a simple page which gives the user the ability to see the page they were looking for is not found.
+        -- this page is returned back into app.jsx
+  after the renderPage method is completed, its value is returned to the children of pageContainer.
+  to which the value of app.jsx is returned back intro index.jsx where the render method of the root first called it.
