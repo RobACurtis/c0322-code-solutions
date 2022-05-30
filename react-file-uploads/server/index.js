@@ -39,9 +39,6 @@ app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
   db.query(sql, params)
     .then(result => {
       const [image] = result.rows;
-      if (!image) {
-        throw new ClientError(401, 'invalid image upload');
-      }
       res.json(image);
     })
     .catch(err => next(err));
