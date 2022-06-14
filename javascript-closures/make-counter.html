@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closures</title>
+</head>
+<body>
+  <script>
+ var makeCounter = function () {
+   var privateCounter = 0;
+   function changeBy(val) {
+     privateCounter += val;
+   }
+   return {
+     increment: function () {
+       changeBy(6);
+     },
+
+     decrement: function () {
+       changeBy(-5);
+     },
+
+     value: function () {
+       return privateCounter;
+     }
+   };
+ };
+
+ var counter1 = makeCounter();
+ var counter2 = makeCounter();
+
+console.log(counter1.value());
+
+ counter1.increment();
+ console.log(counter1.value());
+ counter1.increment();
+ console.log(counter1.value());
+
+ counter1.decrement();
+console.log(counter1.value());
+counter2.increment();
+console.log(counter2.value());
+counter2.decrement();
+console.log(counter2.value());
+  </script>
+</body>
+</html>
