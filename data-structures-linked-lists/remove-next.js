@@ -2,5 +2,6 @@
 
 function removeNext(list) {
   if (list.next === null) return;
-  list.next.print();
+  const data = list.next.next;
+  list.next = data;
 }
